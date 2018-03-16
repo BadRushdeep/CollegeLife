@@ -47,6 +47,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='userprofileinfo',
             name='college',
-            field=models.ForeignKey(default='Coll', on_delete=django.db.models.deletion.CASCADE, to='Loginapp.College'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Loginapp.College'),
         ),
     ]

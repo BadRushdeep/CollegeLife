@@ -57,7 +57,7 @@ def register(request):
 		user_form = UserForm()
 		profile_form = UserProfileInfoForm()
 
-	return render(request,'Loginapp/registeration.html', 
+	return render(request,'Loginapp/registeration.html',
 		                   {'user_form':user_form,
 		                    'profile_form':profile_form,
 		                    'registered':registered})
@@ -75,7 +75,7 @@ def user_login(request):
 		if user:
 			if user.is_active:
 				login(request,user)
-				return HttpResponseRedirect(reverse('index'))
+				return render(request,'Loginapp/dashboard.html')
 
 			else:
 				return HttpResponse("Account Not Active")

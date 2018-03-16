@@ -9,21 +9,61 @@
 
 	<h1>Thank you for registering!</h1>
 
-	
+
 
 	{% else %}
 
-		<h1>Register here!</h1>
-		<h3>Fill out the Form:</h3>
-
+		<h1 class="text-center display-4">Register here!</h1>
+		<h3 class="text-center display-6">Fill out the Form:</h3>
+		<hr>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-6">
 		<form enctype="multipart/form-data" method="POST">
 
 			{% csrf_token %}
 
-			{{ user_form.as_p}}
-			{{ profile_form.as_p}}
-			<input type="submit" name="" value="Register">
+
+			<div class="form-group">
+			  	{{ user_form.username}}
+			</div>
+			<div class="form-group">
+			  	{{ user_form.email}}
+			</div>
+			<div class="form-group">
+			  	{{ user_form.password}}
+			</div>
+			<!--Second Form-->
+			<div class="form-group">
+			{{ profile_form.first_name}}
+			</div>
+			<div class="form-group">
+			  {{ profile_form.last_name}}
+			</div>
+			<div class="form-group">
+			  {{ profile_form.password}}
+			</div>
+			<div class="form-group form-inline">
+			  {{ profile_form.dob}}
+			</div>
+			<div class="form-group">
+			  {{ profile_form.profile_pic}}
+			</div>
+			<div class="form-group">
+			  {{ profile_form.doc_image}}
+			</div>
+			<div class="form-group">
+			  {{ profile_form.mob_no}}
+			</div>
+			<div class="form-group">
+			  {{ profile_form.College}}
+			</div>
+			<input type="submit" class="btn btn-success form-control" value="Register">
 		</form>
+	</div>
+</div>
 		{% endif %}
 
 		{% endblock %}

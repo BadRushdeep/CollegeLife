@@ -21,14 +21,8 @@ class UserProfileInfo(models.Model):
 	college = models.ForeignKey(College, on_delete=models.CASCADE)
 	mob_no = models.CharField(max_length=13, default='67567574', blank=False)
 	dob = models.DateField( default=date.today, blank=False)
-
-
-
-
-	portfolio_site = models.URLField(blank=True)
 	profile_pic = models.ImageField(upload_to='profile_pics' ,blank=True)
 
 	def __str__(self):
-		
-		return self.user.username
 
+		return self.user.username
