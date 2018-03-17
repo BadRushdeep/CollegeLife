@@ -10,6 +10,12 @@ class UserForm(forms.ModelForm):
 		model = User
 		fields = ('username', 'email', 'password')
 
+class CollegeForm(forms.ModelForm):
+	college = forms.CharField(max_length=200)
+	class Meta():
+		model= College
+		fields = '__all__'
+
 class UserProfileInfoForm(forms.ModelForm):
 	first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'First Name'}))
 	last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Last Name'}))
@@ -21,3 +27,5 @@ class UserProfileInfoForm(forms.ModelForm):
 	class Meta():
 		model= UserProfileInfo
 		fields = ('first_name','last_name','mob_no','doc_image','college','dob','profile_pic')
+
+

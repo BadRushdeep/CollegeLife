@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from Loginapp.forms import UserProfileInfoForm, UserForm
+from Loginapp.forms import UserProfileInfoForm, UserForm, CollegeForm
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import login,logout,authenticate
+from Loginapp.models import College, UserProfileInfo
 
 
 
@@ -24,13 +25,26 @@ def user_logout(request):
 	logout(request)
 	return HttpResponseRedirect(reverse('index'))
 
+
+def college(request):
+	form = CollegeForm()
+	if request.method == 'POST':
+		form = CollegeForm(request.POST)
+		if form .is_valid():
+			form.save()
+			return HttpResponse("done")
+		return render(request,'Loginapp/CollegeForm.html',{'form':form})
+	return render(request,'Loginapp/CollegeForm.html',{'form':form})
+
+
+
 def register(request):
 
 	registered = False
 
 	if request.method == "POST":
 		user_form = UserForm(data=request.POST)
-		profile_form = UserProfileInfoForm(data=request.POST)
+		profile_form = UserProfileInfoForm(request.POST, request.FILES)
 
 
 		if user_form.is_valid() and profile_form.is_valid() :
@@ -42,13 +56,15 @@ def register(request):
 			profile = profile_form.save(commit=False)
 			profile.user = user
 
-			if 'profile_pic' in request.FILES:
-				profile.profile_pic = request.FILES['profile_pic']
+			
+			profile.profile_pic = profile_form.cleaned_data['profile_pic']
+			profile.doc_image = profile_form.cleaned_data['doc_image']
 
 
 			profile.save()
 
 			registered = True
+			return HttpResponse("wow")
 
 		else:
 			print(user_form.errors, profile_form.errors)
