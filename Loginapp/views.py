@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Loginapp.forms import UserProfileInfoForm, UserForm
+from Loginapp.forms import UserProfileInfoForm, UserForm, CollegeForm
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -31,6 +31,19 @@ def special(request):
 def user_logout(request):
 	logout(request)
 	return HttpResponseRedirect(reverse('index'))
+
+
+def college(request):
+	form = CollegeForm()
+	if request.method == 'POST':
+		form =CollegeForm(request.POST)
+		if form .is_valid():
+			form.save()
+			return HttpResponse('WOW')
+		else:
+			return HttpResponse('OOPS Invalid Form')
+	return render(request,'Loginapp/CollegeForm.html',{'form':form,})
+
 
 def register(request):
 
