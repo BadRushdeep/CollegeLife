@@ -1,25 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-	{% if display %}
+{% extends 'Loginapp/dashboard.html' %}
+{% block content %}
 	{% for d in display %}
+	{% if college == d.college %}
+		<div class="container-fluid">
+				<div class="row">
+					<h1 class="display-7">
+						<a href="#"> {{ d.college }} </a>
+					</h1>
+				</div>
+				<div class="row">
+					<h2 class="display-8">
+						{{ d.prob_stat }}
+					</h2>
+				</div>
+				<div class="row">
+					<h2 class="display-8">
 
-
-	 {{ d.college }}
-	 <br>
-	 {{ d.prob_stat }}
-	 <br>
-	 {{ d.rating.likes }}
-	 <hr>
-	
-
+					</h2>
+				</div>
+			<hr>
+			<br>
+		</div>
+		{% endif %}
  	{% endfor %}
- 	{% endif %}
-
-
-</body>
-</html>
+{% endblock %}

@@ -6,3 +6,8 @@ class ProblemForm(forms.ModelForm):
 	class Meta():
 		model = Problem
 		fields=('prob_stat',)
+
+class UpvoteForm(forms.ModelForm):
+	class Meta():
+		model = Problem
+		fields = ('booltrue',)

@@ -7,6 +7,9 @@ body{
 .footer{
   color:white;
 }
+.well{
+  background-color: #888888;
+}
 .white-text{
   color:white;
 }

@@ -25,7 +25,7 @@ def index(request):
 
 @login_required
 def special(request):
-	return render(request,'Loginapp/dashboard.html')
+	return HttpResponseRedirect('/display')
 
 @login_required
 def user_logout(request):

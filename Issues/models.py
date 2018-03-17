@@ -8,10 +8,11 @@ from datetime import date
 class Problem(models.Model):
 	prob_stat = models.TextField()
 	created = models.DateField(default=date.today)
-	
+
 	college = models.ForeignKey(College, related_name='collegename' , null=True,blank=True,on_delete = models.CASCADE)
 	rating = RatingField(can_change_vote=True,blank=True,null=True)
-
+	count =models.IntegerField()
+	booltrue = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.prob_stat
