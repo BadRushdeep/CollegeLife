@@ -12,6 +12,7 @@ class UserForm(forms.ModelForm):
 
 
 class CollegeForm(forms.ModelForm):
+	college = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'College'}))
 	class Meta():
 		model = College
 		fields = '__all__'

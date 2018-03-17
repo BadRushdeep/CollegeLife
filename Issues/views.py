@@ -13,13 +13,13 @@ from django.contrib.auth.models import User
 @login_required
 def problem(request):
 	form = ProblemForm()
-	
+
 	prob = Problem()
 	if request.method == 'POST':
 		form = ProblemForm(request.POST)
-		
-		
-		
+
+
+
 
 		# form.college = UserProfileInfo.objects.filter(user=request.user)[0].college
 		# form.prob_stats = request.POST.prob_stats
@@ -29,20 +29,18 @@ def problem(request):
 		#print(prob.creator)
 		#print(prob.college)
 
-		
-		
+
+
 		if form .is_valid():
 			prob.college=UserProfileInfo.objects.filter(user=request.user)[0].college
 			data = form.cleaned_data
 
 			prob.prob_stat =data['prob_stat']
 			prob.save()
-			
-			
+
+
 			print(Problem.college)
-			return HttpResponse("Problem Solved")
+			return HttpResponseRedirect("../../special")
 		else:
 			return HttpResponse("Error in form")
 	return render(request,'Issues/Problem.html',{'form':form,})
-
-

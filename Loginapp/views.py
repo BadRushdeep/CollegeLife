@@ -39,7 +39,7 @@ def college(request):
 		form =CollegeForm(request.POST)
 		if form .is_valid():
 			form.save()
-			return HttpResponse('WOW')
+			return HttpResponseRedirect('../register')
 		else:
 			return HttpResponse('OOPS Invalid Form')
 	return render(request,'Loginapp/CollegeForm.html',{'form':form,})

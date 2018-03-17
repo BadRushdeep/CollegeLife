@@ -73,6 +73,7 @@
 			<div class="form-group">
 				{{ profile_form.college.errors }}
 				{{ profile_form.college}}
+				<a class="btn btn-sm btn-info" href="{% url 'Loginapp:college' %}">+Add College</a>
 			</div>
 			<input type="submit" class="btn btn-success form-control" value="Register">
 			{% csrf_token %}

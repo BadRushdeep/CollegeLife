@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-
-
-<form method="POST">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" value="Submit" name="">
-	
-	
-</form>
-</body>
-</html>
+{% extends 'Loginapp/base.html' %}
+{% block body_block %}
+<div class="container text-center">
+  <div class="row p-5">
+    <div class="col-md-2">
+    </div>
+		<div class="col-md-8">
+			<h1 class="display-3 white-text">Add College</h1>
+			<div class="well white-text">Now, It's time to put your college in our database</h1>
+				<hr>
+				<br>
+			<form method="POST">
+				{% csrf_token %}
+				{{ form.college }}<br>
+				<div class="form-group">
+				<input class="btn btn-success form-control" type="submit" value="Submit" name="">
+				</div>
+			</form>
+		</div>
+		<div class="col-md-2">
+		</div>
+  </div>
+</div>
+{% endblock %}
