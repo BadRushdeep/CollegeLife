@@ -9,7 +9,7 @@ class Problem(models.Model):
 	prob_stat = models.TextField()
 	created = models.DateField(default=date.today)
 	
-	college = models.ForeignKey(College, related_name='collegename' , on_delete = models.CASCADE)
+	college = models.ForeignKey(College, related_name='collegename' , null=True,blank=True,on_delete = models.CASCADE)
 	rating = RatingField(can_change_vote=True,blank=True,null=True)
 
 

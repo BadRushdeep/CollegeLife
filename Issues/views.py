@@ -19,9 +19,8 @@ def problem(request):
 		form = ProblemForm(request.POST)
 		
 		
-		prob.college=UserProfileInfo.objects.filter(user=request.user)[0].college
-		print(prob.college)
-		prob.save()
+		
+
 		# form.college = UserProfileInfo.objects.filter(user=request.user)[0].college
 		# form.prob_stats = request.POST.prob_stats
 
@@ -33,7 +32,14 @@ def problem(request):
 		
 		
 		if form .is_valid():
-			form.save()
+			prob.college=UserProfileInfo.objects.filter(user=request.user)[0].college
+			data = form.cleaned_data
+
+			prob.prob_stat =data['prob_stat']
+			prob.save()
+			
+			
+			print(Problem.college)
 			return HttpResponse("Problem Solved")
 		else:
 			return HttpResponse("Error in form")
