@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	{% if display %}
+	{% for d in display %}
+
+
+	 {{ d.college }}
+	 <br>
+	 {{ d.prob_stat }}
+	 <br>
+	 {{ d.rating.likes }}
+	 <hr>
+	
+
+ 	{% endfor %}
+ 	{% endif %}
+
+
+</body>
+</html>

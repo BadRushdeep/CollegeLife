@@ -19,6 +19,7 @@ from django.conf.urls import url
 from Loginapp import views
 from django.conf.urls.static import static
 from django.conf import settings
+from Issues.views import display
 
 
 urlpatterns = [
@@ -28,5 +29,6 @@ urlpatterns = [
 
     url(r'^special/',views.special, name='special'),
     url(r'^account/',include('Loginapp.urls')),
-    url(r'^problem/',include('Issues.urls'))
+    url(r'^problem/',include('Issues.urls')),
+    url(r'^display/', display , name='Display'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

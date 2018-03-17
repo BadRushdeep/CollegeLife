@@ -44,3 +44,7 @@ def problem(request):
 		else:
 			return HttpResponse("Error in form")
 	return render(request,'Issues/Problem.html',{'form':form,})
+
+def display(request):
+	issue_list = Problem.objects.order_by('created')
+	return render(request,'Issues/display.html',{'display':issue_list,})
