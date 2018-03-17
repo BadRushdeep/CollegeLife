@@ -1,0 +1,12 @@
+{% extends 'Loginapp/dashboard.html' %}
+{% block content %}
+<div class="bg-white text-center p-5">
+  {% for p in profile %}
+    {% if p.user == usern %}
+      Welcome to Account <i>{{p.first_name}} {{p.last_name}}</i>!<br>
+      <b>Mobile No:</b> {{p.mob_no}}<br>
+      <b>College:</b> {{p.college}}
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}

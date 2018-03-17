@@ -27,6 +27,6 @@ urlpatterns = [
     url(r'^logout/$',views.user_logout,name='logout'),
 
     url(r'^Login/',include('Loginapp.urls')),
-    url(r'^special/',views.special),
-
+    url(r'^special/',views.special, name='special'),
+    url(r'^account/',include('Loginapp.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

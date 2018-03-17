@@ -8,16 +8,26 @@
 
 <div class="container-fluid">
   <div class="row mar">
-    <div class="col-md-4 bg-grey">
-        <a href="#" class="btn btn-success">+Add</a>
+    <div class="col-md-2 bg-grey text-center p-5">
+        <a  class="btn btn-success form-control" href="#" class="btn btn-success">+Add</a>
+        <br><br>
+        <a  class="btn btn-info form-control" href="{% url 'special' %}">Dashboard</a><br>
         <br>
-        <a href="#">User details</a><br>
-        <a href="#">Problems</a>
+        <a  class="btn btn-info form-control" href="{% url 'Loginapp:account' %}">User details</a><br>
         <br>
-        <a href="#" class="btn btn-danger">Logout</a>
+        <a class="btn btn-drop form-control" data-toggle="collapse" data-target="#toggleprob">Problems</a>
+
+        <div id="toggleprob" class="collapse">
+          <a href="#" class="btn btn-info form-control">Ongoing</a><br>
+          <a href="#"  class="btn btn-info form-control">Active</a><br>
+          <a href="#"  class="btn btn-info form-control">Solved</a>
+        </div>
+        <br><br>
+        <a href="{% url 'logout' %}" class="btn btn-danger form-control">Logout</a>
     </div>
-    <div class="col-md-8">
-      Content
+    <div class="col-md-10 bg-white">
+      {% block content %}
+      {% endblock %}
     </div>
   </div>
 </div>

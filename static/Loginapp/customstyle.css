@@ -9,8 +9,20 @@ body{
 }
 .bg-grey{
   background-color: #666666;
-  min-height: 50vh;
+  min-height: 65vh;
 }
 .mar{
   margin: -31px;
+}
+.bg-white
+{
+  background-color:white;
+}
+.btn-drop:hover,.btn-link:visited,btn-link::after
+{
+  background-color: #00cccc;
+}
+.btn-drop
+{
+  background-color:#00e6e6 ;
 }

@@ -5,13 +5,21 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import login,logout,authenticate
-
+from Loginapp.models import UserProfileInfo
 
 
 
 
 
 # Create your views here.
+def account(request):
+	web_list = UserProfileInfo.objects.order_by('first_name')
+	uid = request.user
+	return render(request,'Loginapp/account.html',{
+	'profile':web_list,
+	'usern':uid,
+	})
+
 def index(request):
 	return render(request,'Loginapp/index.html')
 
