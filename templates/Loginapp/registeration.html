@@ -22,45 +22,60 @@
 				</div>
 				<div class="col-md-6">
 		<form enctype="multipart/form-data" method="POST">
+						{% csrf_token %}
 
-			{% csrf_token %}
 
 
 			<div class="form-group">
+					{{ user_form.username.errors }}
 			  	{{ user_form.username}}
 			</div>
 			<div class="form-group">
-			  	{{ user_form.email}}
+					{{ user_form.email.errors }}
+					{{ user_form.email}}
 			</div>
 			<div class="form-group">
-			  	{{ user_form.password}}
+					{{ user_form.password.errors }}
+					{{ user_form.password}}
 			</div>
 			<!--Second Form-->
 			<div class="form-group">
+				{{ profile_form.first_name.errors }}
 			{{ profile_form.first_name}}
 			</div>
 			<div class="form-group">
-			  {{ profile_form.last_name}}
+				{{ profile_form.last_name.errors }}
+				{{ profile_form.last_name}}
 			</div>
 			<div class="form-group">
-			  {{ profile_form.password}}
+				{{ profile_form.password.errors }}
+				{{ profile_form.password}}
 			</div>
 			<div class="form-group form-inline">
-			  {{ profile_form.dob}}
+				{{ profile_form.dob.errors }}
+				{{ profile_form.dob}}
+			</div>
+			Profile Picture:
+			<br>
+			<div class="form-group">
+				{{ profile_form.profile_pic.errors }}
+				{{ profile_form.profile_pic}}
+			</div>
+			College ID:
+			<div class="form-group">
+				{{ profile_form.doc_image.errors }}
+				{{ profile_form.doc_image}}
 			</div>
 			<div class="form-group">
-			  {{ profile_form.profile_pic}}
+				{{ profile_form.mob_no.errors }}
+				{{ profile_form.mob_no}}
 			</div>
 			<div class="form-group">
-			  {{ profile_form.doc_image}}
-			</div>
-			<div class="form-group">
-			  {{ profile_form.mob_no}}
-			</div>
-			<div class="form-group">
-			  {{ profile_form.College}}
+				{{ profile_form.college.errors }}
+				{{ profile_form.college}}
 			</div>
 			<input type="submit" class="btn btn-success form-control" value="Register">
+			{% csrf_token %}
 		</form>
 	</div>
 </div>

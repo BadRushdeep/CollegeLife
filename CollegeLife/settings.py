@@ -125,6 +125,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS= [ STATIC_DIR,]
 LOGIN_URL ='/Loginapp/user_login'
-
+LOGIN_REDIRECT_URL = '/special'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'

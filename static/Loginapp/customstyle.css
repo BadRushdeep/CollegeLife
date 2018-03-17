@@ -4,3 +4,13 @@ body{
 .inlinef{
   width:auto;
 }
+.footer{
+  color:white;
+}
+.bg-grey{
+  background-color: #666666;
+  min-height: 50vh;
+}
+.mar{
+  margin: -31px;
+}
