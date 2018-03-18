@@ -24,7 +24,10 @@ __Step 4: Install Django__
 Run this in a directory : __pip install Django__
 
 __Step 5: Clone this directory__
- Go to directory and run this command to open our site at localhost:8000
+git clone https://github.com/BadRushDeep/CollegeLife/
 
-__Step 6: python manage.py runserver__
+__Step 6: Run server__
+_python manage.py runserver_
+
+Site is successfully hosted on localhost
 
