@@ -2,21 +2,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>College Problem Solver</title>
+	<title>CollegeMitra: A Perfect Companion</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-
-	<link rel="stylesheet" href="{% static 'Loginapp/customstyle.css' %}">
 </head>
 <body>
 	<nav class="navbar bg-dark">
 				<a class="btn btn-info" href="{% url 'index' %}">CollegeSolver</a>
 				{% if user.is_authenticated %}
-					
+					<a class="btn btn-info" href="{% url 'Loginapp:account' %}">Goto Dashboard</a>
 				{% else %}
 				<div class="btn-group">
 					<a class="btn btn-info" href="{% url 'Loginapp:register' %}">Register</a>

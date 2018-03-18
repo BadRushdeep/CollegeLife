@@ -1,6 +1,6 @@
 {% extends 'Loginapp/dashboard.html' %}
 {% block content %}
-<div class="bg-white text-center p-5">
+<div class="text-center p-5">
   {% for p in profile %}
     {% if p.user == usern %}
       <img class="rounded-circle" height="200px" width="200px" src='{{ p.profile_pic.url }}' alt="Profile Pic">

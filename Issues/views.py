@@ -31,6 +31,12 @@ def problem(request):
 			return HttpResponse("Error in form")
 	return render(request,'Issues/Problem.html',{'form':form,})
 
+def active(request):
+	return render(request,'Issues/active.html')
+
+def solved(request):
+	return render(request,'Issues/solved.html')
+
 def display(request):
 	issue_list = Problem.objects.order_by('created')
 	ucol = UserProfileInfo.objects.filter(user=request.user)[0].college

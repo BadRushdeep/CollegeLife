@@ -1,4 +1,5 @@
 {% extends 'Loginapp/dashboard.html' %}
+{% load staticfiles %}
 {% block content %}
 	{% for d in display %}
 	{% if college == d.college %}
@@ -15,11 +16,18 @@
 				</div>
 				<div class="row">
 					<h2 class="display-8">
-
+						<div class="btn-group">
+						<a href="#" id="upvote" class="btn btn-success">Upvote | {{d.id}}</a>
+						</div>
 					</h2>
 				</div>
 			<hr>
 			<br>
+			<script
+				  src="https://code.jquery.com/jquery-3.3.1.js"
+				  crossorigin="anonymous"></script>
+			<script src="{% static 'Issues/customjs.js' %}" charset="utf-8"></script>
+		<link rel="stylesheet" href="{% static 'Loginapp/customstyle.css' %}">
 		</div>
 		{% endif %}
  	{% endfor %}
