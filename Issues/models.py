@@ -11,7 +11,7 @@ class Problem(models.Model):
 
 	college = models.ForeignKey(College, related_name='collegename' , null=True,blank=True,on_delete = models.CASCADE)
 	rating = RatingField(can_change_vote=True,blank=True,null=True)
-	count =models.IntegerField()
+	count =models.IntegerField(blank=True, null=True)
 	booltrue = models.BooleanField(default=False)
 
 	def __str__(self):
