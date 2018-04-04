@@ -1,7 +1,7 @@
 var x = 22;
 $('#upvote').click(function(){
   this.id = 'inc';
-  x=x+0.5;
+  x=x+1;
   $('#inc').text("Upvote | "+ x)
   console.log(x);
   var y = $('#inc').text();
